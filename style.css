@@ -1,147 +1,85 @@
-/* ----- Reset + Base ----- */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
+/* Corps */
 body {
-  font-family: 'Poppins', Arial, sans-serif;
-  background: #f9fafc;
-  color: #333;
-  line-height: 1.6;
+    font-family: 'Arial', sans-serif;
+    scroll-behavior: smooth;
+    background-color: #f0f3f7;
+    color: #333;
+    line-height: 1.6;
 }
 
-/* ----- Header ----- */
-header {
-  background: linear-gradient(135deg, #1e3c72, #2a5298);
-  color: white;
-  text-align: center;
-  padding: 60px 20px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+/* Header avec dégradé */
+.header {
+    background: linear-gradient(135deg, #3498db, #9b59b6);
+    color: white;
 }
 
-header h1 {
-  font-size: 2.5em;
-  margin-bottom: 10px;
-  letter-spacing: 1px;
-}
-
-header p {
-  font-size: 1.2em;
-  opacity: 0.9;
-}
-
-header img {
-  border-radius: 50%;
-  border: 3px solid white;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-  width: 150px;
-  height: 150px;
-  object-fit: cover;
-  margin-bottom: 15px;
-}
-
-/* ----- Sections ----- */
-section {
-  margin: 40px auto;
-  background: white;
-  padding: 30px;
-  border-radius: 15px;
-  max-width: 900px;
-  box-shadow: 0 6px 15px rgba(0,0,0,0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-section:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-}
-
+/* Section h2 */
 section h2 {
-  color: #1e3c72;
-  margin-bottom: 15px;
-  border-left: 5px solid #2a5298;
-  padding-left: 10px;
+    font-weight: bold;
+    margin-bottom: 20px;
 }
 
-section p, section ul {
-  font-size: 1.1em;
-  color: #555;
+/* CV Buttons */
+.btn-download {
+    background-color: #ff6b6b;
+    color: white;
+    font-weight: bold;
+    padding: 10px 25px;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+.btn-download:hover {
+    background-color: #ee4b4b;
+    transform: translateY(-3px);
 }
 
-/* ----- Liste des projets ----- */
-ul {
-  list-style: none;
+.btn-outline-download {
+    border: 2px solid #ff6b6b;
+    color: #ff6b6b;
+    font-weight: bold;
+    padding: 10px 25px;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+.btn-outline-download:hover {
+    background-color: #ff6b6b;
+    color: white;
+    transform: translateY(-3px);
 }
 
-ul li {
-  background: #eef2f7;
-  margin: 10px 0;
-  padding: 10px 15px;
-  border-radius: 8px;
-  transition: background 0.3s;
+/* Cards projets */
+.project-card {
+    transition: transform 0.4s, box-shadow 0.4s;
+    border-radius: 15px;
+}
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 25px rgba(0,0,0,0.3);
 }
 
-ul li:hover {
-  background: #dfe8f1;
+/* Footer */
+.footer {
+    background: linear-gradient(135deg, #9b59b6, #3498db);
+    color: white;
+}
+.footer a {
+    color: white;
+    text-decoration: none;
+}
+.footer a:hover {
+    text-decoration: underline;
 }
 
-/* ----- Cards Bootstrap custom ----- */
-.card {
-  border-radius: 15px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+/* Animations au scroll */
+.animate-section {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s ease-out;
 }
 
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-}
-
-/* ----- Boutons CV ----- */
-.btn {
-  border-radius: 8px;
-  transition: background 0.3s, transform 0.3s;
-}
-
-.btn:hover {
-  transform: scale(1.05);
-}
-
-/* ----- Footer ----- */
-footer {
-  text-align: center;
-  background: #1e3c72;
-  color: white;
-  padding: 15px;
-  margin-top: 40px;
-  font-size: 0.9em;
-  box-shadow: 0 -3px 10px rgba(0,0,0,0.1);
-}
-
-/* ----- Animations ----- */
-@keyframes fadeIn {
-  0% { opacity: 0; transform: translateY(10px); }
-  100% { opacity: 1; transform: translateY(0); }
-}
-
-section {
-  animation: fadeIn 0.8s ease forwards;
-  opacity: 0;
-}
-
-/* ----- Responsive ----- */
-@media (max-width: 768px) {
-  section {
-    width: 90%;
-    padding: 20px;
-  }
-
-  header h1 {
-    font-size: 2em;
-  }
-
-  header p {
-    font-size: 1em;
-  }
+.animate-section.in-view {
+    opacity: 1;
+    transform: translateY(0);
 }
